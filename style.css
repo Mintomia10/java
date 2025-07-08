@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(237, 216, 216);
+  background-color: rgb(247, 234, 234);
 }
 
 header {
@@ -32,7 +32,7 @@ header {
 /* highlights section css fils */
 #highlights {
   width: 70%;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 #highlights > h2 {
@@ -52,4 +52,15 @@ header {
 #buy-now-btn {
   display: flex;
   justify-content: center;
+}
+
+/* Cover Image css */
+#cover-image {
+  width: 70%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+}
+#cover-image > img {
+  width: 100%;
 }
