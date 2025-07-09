@@ -64,3 +64,37 @@ header {
 #cover-image > img {
   width: 100%;
 }
+
+/* search section css */
+#search {
+  width: 70%;
+  margin: 50px auto;
+}
+#search > h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#search-container {
+  margin: 0 auto;
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: beige;
+  padding: 10px;
+  display: flex;
+}
+#search-bar {
+  width: 70%;
+}
+#search-bar > input[type="text"] {
+  padding: 15px;
+  border: 0;
+  width: 50%;
+  background-color: beige;
+  outline: none;
+}
+#search-button {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
