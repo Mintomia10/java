@@ -1,60 +1,49 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My API Store</title>
-    <!-- Google fonts -->
+    <title>My phone Store apps</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <!-- fontawesome icons  -->
+    <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/946cabd75f.js"
       crossorigin="anonymous"
     ></script>
-    <!-- css files -->
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Header section -->
     <header>
-      <h1>My API Store</h1>
+      <h2>My API Store</h2>
       <button class="btn">Sign Up</button>
     </header>
-    <!-- End Header section -->
 
     <main>
-      <!-- highlights section -->
-      <section id="highlights">
-        <h2>Apple Iphone I3 Pro Max</h2>
+      <!-- section 1 -->
+      <section id="section-1">
+        <h1>Apple Iphone 13 Pro Max</h1>
         <p>
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered alteration in some form, by injected humou.
         </p>
-        <div id="buy-now-btn">
+        <div id="buy-now-btn-container">
           <button class="btn">Buy Now</button>
         </div>
       </section>
-      <!-- End highlights -->
 
-      <!-- Cover Image section -->
-      <section id="cover-image">
-        <img
-          src="assets/Image/cover-image.png"
-          loading="lazy"
-          alt="cover-image"
-        />
+      <!-- section-2 -->
+      <section id="section-2">
+        <img src="assets/Image/cover-image.png" alt="cover-image" />
       </section>
-      <!-- End Cover Image -->
 
-      <!-- Search section -->
-      <section id="search">
+      <!-- section-3 (Search) -->
+      <section id="section-3">
         <h2>Search Your Phone</h2>
+
         <div id="search-container">
           <div id="search-bar">
             <i
@@ -68,22 +57,35 @@
               placeholder="Search Your Phone"
             />
           </div>
+
           <div id="search-button">
             <button onclick="handleSearch()" class="btn">Search</button>
           </div>
         </div>
       </section>
-      <!-- End Search section -->
 
-      <!-- Card section -->
-      <section id="card-section">
+      <!-- spinner section -->
+      <section
+        style="
+          width: 80%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+        "
+      >
+        <div id="loading-spinner" class="loader hidden"></div>
+      </section>
+
+      <!-- card section -->
+      <section id="card-container-section">
         <!--demo card -->
         <div class="card">
           <div class="card-image">
-            <img src="./assets/Image/iphone-img.png" alt="card-image" />
+            <img src="assets/image/iphone-img.png" alt="card-image" />
           </div>
 
           <h3 class="card-title">Iphone 13 Pro Max</h3>
+
           <p class="card-description">
             There are many variations of passages of available, but the majority
             have suffered
@@ -98,14 +100,14 @@
             <button class="btn">Show Details</button>
           </div>
         </div>
-
         <!--demo card -->
         <div class="card">
           <div class="card-image">
-            <img src="./assets/Image/iphone-img.png" alt="card-image" />
+            <img src="assets/image/iphone-img.png" alt="card-image" />
           </div>
 
           <h3 class="card-title">Iphone 13 Pro Max</h3>
+
           <p class="card-description">
             There are many variations of passages of available, but the majority
             have suffered
@@ -120,14 +122,14 @@
             <button class="btn">Show Details</button>
           </div>
         </div>
-
         <!--demo card -->
         <div class="card">
           <div class="card-image">
-            <img src="./assets/Image/iphone-img.png" alt="card-image" />
+            <img src="assets/image/iphone-img.png" alt="card-image" />
           </div>
 
           <h3 class="card-title">Iphone 13 Pro Max</h3>
+
           <p class="card-description">
             There are many variations of passages of available, but the majority
             have suffered
@@ -143,10 +145,87 @@
           </div>
         </div>
       </section>
-      <!-- End card section -->
 
-      <!--  -->
+      <!-- show all button -->
+      <section id="showAll-btn-section">
+        <button onclick="handleShowAll()" id="showAllBtn" class="btn hidden">
+          Show All Results
+        </button>
+      </section>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span id="closeBtn">&times;</span>
+          <!-- <p id="show-detail-phone-name">This is a simple modal.</p> -->
+
+          <div id="show-detail-container"></div>
+        </div>
+      </div>
     </main>
+
+    <footer>
+      <!-- upper footer section -->
+      <section id="upper-footer-section">
+        <div>
+          <h2 style="font-size: 45px; margin-bottom: 10px">My API Store</h2>
+          <p style="color: #706f6f; font-size: 18px; font-weight: 600">
+            Learn How to use API Store
+          </p>
+        </div>
+
+        <div id="footer-social-icons">
+          <a href="">
+            <img src="assets/image/facebook.png" alt="facebook" />
+          </a>
+          <a href="">
+            <img src="assets/image/twitter.png" alt="x" />
+          </a>
+          <a href="">
+            <img src="assets/image/instagram.png" alt="instagram" />
+          </a>
+
+          <button class="btn">Join Premium</button>
+        </div>
+      </section>
+
+      <!-- horizontal line -->
+      <section id="horizontal-line"></section>
+
+      <!-- footer links (bottom) -->
+      <section id="footer-nav">
+        <div>
+          <a href=""><span>Products</span></a>
+          <a href=""><span>Browse Jobs</span></a>
+          <a href=""><span>Remote Jobs</span></a>
+          <a href=""><span>Company Jobs</span></a>
+          <a href=""><span>Startup Jobs</span></a>
+        </div>
+        <div>
+          <a href=""><span>Products</span></a>
+          <a href=""><span>Browse Jobs</span></a>
+          <a href=""><span>Remote Jobs</span></a>
+          <a href=""><span>Company Jobs</span></a>
+          <a href=""><span>Startup Jobs</span></a>
+        </div>
+        <div style="text-align: left">
+          <a href=""><span>Products</span></a>
+          <a href=""><span>Browse Jobs</span></a>
+          <a href=""><span>Remote Jobs</span></a>
+          <a href=""><span>Company Jobs</span></a>
+          <a href=""><span>Startup Jobs</span></a>
+        </div>
+        <div style="text-align: right">
+          <a href=""><span>Products</span></a>
+          <a href=""><span>Browse Jobs</span></a>
+          <a href=""><span>Remote Jobs</span></a>
+          <a href=""><span>Company Jobs</span></a>
+          <a href=""><span>Startup Jobs</span></a>
+        </div>
+      </section>
+    </footer>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>
